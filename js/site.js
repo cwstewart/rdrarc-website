@@ -1,0 +1,1 @@
+const m=document.querySelector("#menu"),n=document.querySelector("nav");m.addEventListener("click",()=>{n.classList.toggle("open");m.setAttribute("aria-expanded",n.classList.contains("open"))});document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>n.classList.remove("open")));document.querySelector("#year").textContent=`© ${new Date().getFullYear()}`;
