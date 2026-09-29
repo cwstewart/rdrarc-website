@@ -3,6 +3,7 @@ import { mkdir } from "node:fs/promises";
 import { chromium } from "playwright";
 import { previewServer } from "../scripts/preview.js";
 
+process.env.TZ = "America/Chicago";
 const server = await previewServer(0);
 const origin = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch(process.env.BROWSER_CHANNEL ? { channel: process.env.BROWSER_CHANNEL } : {});
