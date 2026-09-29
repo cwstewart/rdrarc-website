@@ -1,0 +1,16 @@
+{
+  "name": "rdrarc-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/calendar.test.js tests/permissions.test.js",
+    "test:browser": "node tests/browser.test.js",
+    "preview": "node scripts/preview.js"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "playwright": "1.62.1"
+  },
+  "engines": { "node": ">=22" },
+  "packageManager": "pnpm@11.19.0"
+}

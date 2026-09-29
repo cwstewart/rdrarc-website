@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Member Calendar | Red Dirt Road Rangers Amateur Radio Club</title>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/members.css">
+</head>
+<body>
+  <a class="skip-link" href="#member-main">Skip to member area</a>
+  <header>
+    <a class="brand" href="index.html"><b>RRR</b><span>Red Dirt Road Rangers<small>Amateur Radio Club</small></span></a>
+    <button id="menu" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav"><a href="index.html">Home</a><a href="index.html#events">Club Events</a><a href="members.html" aria-current="page">Members</a></nav>
+  </header>
+  <main id="member-main" class="member-main">
+    <p class="eyebrow">THE RANGERS • MEMBER AREA</p>
+    <h1>On the calendar.</h1>
+    <p class="lead">Plan your next outing, net, or club gathering.</p>
+    <p id="status" class="status" role="status" aria-live="polite">Connecting to the member area…</p>
+    <noscript><p>Enable JavaScript to sign in and view the member calendar.</p></noscript>
+    <div id="auth-panel" class="panel auth-panel" hidden>
+      <h2 id="auth-heading">Member login</h2>
+      <p id="auth-help">Sign in with your email and password. Calendar access requires club approval.</p>
+      <form id="auth-form">
+        <label for="email">Email address</label><input id="email" type="email" autocomplete="email" maxlength="254" required>
+        <div id="password-field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required></div>
+        <button class="btn hot" id="auth-submit" type="submit">Sign in</button>
+      </form>
+      <div class="auth-links"><button type="button" id="show-login">Sign in</button><button type="button" id="show-signup">Request membership</button><button type="button" id="show-reset">Forgot password?</button></div>
+    </div>
+    <div id="account-panel" class="account-bar" hidden>
+      <p>Signed in as <strong id="account-email"></strong></p>
+      <div><button id="refresh" class="btn" type="button">Refresh</button><button id="signout" class="btn" type="button">Sign out</button></div>
+    </div>
+    <div id="recovery-panel" class="panel auth-panel" hidden>
+      <h2>Set a new password</h2>
+      <form id="recovery-form"><label for="new-password">New password (at least 12 characters)</label><input id="new-password" type="password" autocomplete="new-password" minlength="12" required><button class="btn hot" type="submit">Save password</button></form>
+    </div>
+    <div id="calendar-panel" hidden>
+      <div class="calendar-toolbar"><h2 id="month-heading"></h2><div class="month-actions"><button id="previous-month" class="btn" type="button" aria-label="Previous month">←</button><button id="today" class="btn" type="button">This month</button><button id="next-month" class="btn" type="button" aria-label="Next month">→</button></div></div>
+      <p id="timezone-note"></p>
+      <div class="calendar-scroll"><table class="calendar" aria-labelledby="month-heading"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody id="calendar-days"></tbody></table></div>
+      <h3>Events this month</h3><p id="empty-events" hidden>No events are scheduled for this month. Check back soon.</p><div id="event-list" class="event-list"></div>
+    </div>
+    <div id="admin-panel" class="admin-panel" hidden>
+      <p class="eyebrow">CLUB ADMINISTRATION</p><h2>Manage events</h2>
+      <form id="event-form" class="panel">
+        <input id="event-id" type="hidden">
+        <label for="event-title">Event title</label><input id="event-title" maxlength="160" required>
+        <div class="form-columns"><div><label for="event-start">Starts (your local time)</label><input id="event-start" type="datetime-local" required></div><div><label for="event-end">Ends (your local time)</label><input id="event-end" type="datetime-local" required></div></div>
+        <label for="event-location">Location or frequency</label><input id="event-location" maxlength="300">
+        <label for="event-description">Details</label><textarea id="event-description" rows="4" maxlength="5000"></textarea>
+        <button id="save-event" class="btn hot" type="submit">Add event</button><button id="cancel-edit" class="btn" type="button" hidden>Cancel edit</button>
+      </form>
+      <h2>Member approvals</h2><p>Verify each request with the club before approving it. Administrator roles are assigned in the database by the site owner.</p><div id="member-list" class="member-list"></div>
+    </div>
+  </main>
+  <footer><div><b>Red Dirt Road Rangers Amateur Radio Club</b><small>Radio • Outdoors • Experimentation • Fellowship</small></div><div><span id="year"></span><span>rdrarc.org</span></div></footer>
+  <script src="js/site.js"></script><script src="js/config.js"></script><script src="vendor/supabase-2.117.2.js"></script><script type="module" src="js/members.js"></script>
+</body>
+</html>
