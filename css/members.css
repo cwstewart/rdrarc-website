@@ -1,0 +1,52 @@
+[hidden] { display: none !important; }
+.member-main { max-width: 1280px; margin: auto; padding: 55px 6vw 80px; }
+.member-main h1 { font-size: clamp(48px, 7vw, 86px); letter-spacing: -1px; }
+.member-main h2 { font-size: clamp(32px, 4vw, 48px); }
+.member-main h3 { line-height: 1.15; }
+.member-main h1, .member-main h2, .member-main h3 { font-family: "Barlow Condensed", sans-serif; }
+.brand, nav a { color: var(--ink); }
+.member-main .btn { font-family: "Barlow Condensed", sans-serif; }
+.member-main button { cursor: pointer; color: inherit; background: transparent; }
+.member-main button.hot { background: var(--rust); color: white; }
+.member-main button:disabled { opacity: .6; cursor: wait; }
+.member-main :focus-visible, .skip-link:focus-visible { outline: 3px solid var(--rust); outline-offset: 4px; }
+.skip-link { position: absolute; top: -100px; left: 16px; z-index: 10; padding: 12px; background: white; }
+.skip-link:focus { top: 10px; }
+.status { border-left: 4px solid var(--green); padding: 12px 16px; background: #e6e6da; overflow-wrap: anywhere; }
+.status.error { border-color: var(--rust); background: #f8e3da; }
+.panel { border: 1px solid var(--line); padding: clamp(18px, 3vw, 32px); background: #fff8; }
+.auth-panel { max-width: 580px; }
+.member-main label { display: block; background: none; padding: 0; margin: 16px 0 5px; font: 600 14px Inter, sans-serif; letter-spacing: normal; }
+.member-main input, .member-main textarea { display: block; width: 100%; min-width: 0; border: 1px solid #87877b; border-radius: 2px; background: white; color: var(--ink); font: inherit; padding: 10px; }
+.auth-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 22px; }
+.auth-links button { border: 0; padding: 4px 0; text-decoration: underline; font: inherit; }
+.account-bar, .calendar-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.account-bar { border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 30px; }
+.account-bar p { overflow-wrap: anywhere; min-width: 0; }
+.calendar-toolbar h2 { margin: 0; }
+.month-actions { display: flex; }
+.calendar-scroll { overflow-x: auto; }
+.calendar { width: 100%; table-layout: fixed; border-collapse: collapse; }
+.calendar th { padding: 10px 2px; background: var(--green); color: white; font-size: 13px; }
+.calendar td { border: 1px solid var(--line); vertical-align: top; height: 110px; padding: 8px; }
+.calendar .day-number { display: inline-block; min-width: 25px; text-align: center; font-weight: 600; }
+.calendar .current-day { background: var(--rust); color: white; border-radius: 50%; }
+.calendar .day-event { display: block; margin-top: 6px; color: var(--green); font-size: 12px; font-weight: 600; overflow-wrap: anywhere; }
+.event-list, .member-list { display: grid; gap: 14px; }
+.event-card, .member-card { border: 1px solid var(--line); border-left: 4px solid var(--rust); padding: 20px; overflow-wrap: anywhere; }
+.event-card h3 { margin: 0 0 14px; }
+.event-card p { margin: 8px 0; white-space: pre-wrap; }
+.event-card:target { outline: 3px solid var(--rust); outline-offset: 3px; }
+.event-card { scroll-margin-top: 110px; }
+.admin-panel { margin-top: 65px; border-top: 1px solid var(--line); padding-top: 35px; }
+.admin-panel > h2 { margin-top: 30px; }
+.form-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 600px) {
+  .member-main { padding-inline: 5vw; }
+  .form-columns { grid-template-columns: 1fr; gap: 0; }
+  .calendar td { padding: 4px 2px; height: 72px; }
+  .calendar .day-event { font-size: 10px; line-height: 1.3; }
+  .brand { font-size: 16px; gap: 8px; }
+  .brand small { font-size: 8px; letter-spacing: 1px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

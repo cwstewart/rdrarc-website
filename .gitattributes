@@ -1,0 +1,2 @@
+# Preserve the upstream browser bundle byte-for-byte, including template literals.
+vendor/supabase-*.js -text -diff linguist-vendored
